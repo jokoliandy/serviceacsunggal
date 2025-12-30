@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bulanan — Admin</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="role-bos">
+<header class="topbar">
+  <div class="container topbar__inner">
+
+    <a class="brand" href="/admin">
+      <div class="brand__logoBox">
+        <img src="/assets/logo-ac.png" class="brand__logoImg" alt="">
+      </div>
+      <div class="brand__text">
+        <div class="brand__name">Service AC Sunggal</div>
+        <div class="brand__tag">Admin Panel</div>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav">
+      <a href="/admin">Dashboard</a>
+      <a href="/admin/atur">Atur Jadwal</a>
+      <a href="/admin/bulanan">Bulanan</a>
+      <a href="/admin/users">Staff</a>
+      <a href="/logout">Logout</a>
+    </nav>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="menuBtn" id="menuBtn" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobileNav" id="mobileNav">
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/atur">Atur Jadwal</a>
+    <a href="/admin/bulanan">Bulanan</a>
+    <a href="/admin/users">Staff</a>
+    <a href="/logout">Logout</a>
+  </div>
+</header>
+
+<main class="container page">
+  <div class="pageHead">
+    <div>
+      <h1>Rekap Bulanan (Semua Catatan)</h1>
+      <p class="muted">Menampilkan semua pekerjaan yang pernah diinput (selesai maupun belum).</p>
+    </div>
+
+    <div class="pageHead__actions" style="display:flex;gap:8px;flex-wrap:wrap;">
+  <select class="input" id="filterStatus" style="min-width:180px;">
+    <option value="all">Semua</option>
+    <option value="pending">Belum selesai</option>
+    <option value="done">Selesai</option>
+  </select>
+
+  <!-- ✅ FILTER TANGGAL (default kosong = ALL) -->
+  <input class="input" type="date" id="filterDate" />
+
+  <button class="btn btn--ghost" id="reload">Refresh</button>
+</div>
+
+  </div>
+
+  <section class="card cardPad">
+    <div id="summary" class="muted small">Memuat...</div>
+    <div id="bulananList" class="jobsList" style="margin-top:12px;"></div>
+  </section>
+</main>
+
+<script src="/bulanan.js"></script>
+<script>
+(function(){
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  if(!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("is-open");
+  });
+
+  nav.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click", ()=> nav.classList.remove("is-open"));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service AC Sunggal — Medan Sunggal</title>
+  <meta name="description" content="Service AC Sunggal: cuci AC, isi freon, perbaikan. Booking cepat via WhatsApp. Cek jadwal ketersediaan online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+ <header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand brand--wide" href="/index.html" aria-label="Service AC Sunggal">
+      <div class="brand__logoWrap">
+        <img src="/assets/logo-ac.png" alt="Service AC Sunggal" class="brand__logoImg">
+      </div>
+      <div class="brand__content">
+    <div class="brand__title">Service AC Sunggal</div>
+    <div class="brand__subtitle">
+      Medan Sunggal <span class="dotSep">•</span> Profesional
+    </div>
+  </div>
+    </a>
+
+    <nav class="nav" aria-label="Navigasi">
+      <a class="nav__link" href="/index.html">Home</a>
+      <a class="nav__link is-active" href="/jadwal">Jadwal</a>
+    </nav>
+
+    <!-- Opsional: kalau mau kanan kosong seperti di screenshot index jadul, hapus blok topActions ini -->
+    <div class="topActions">
+      <a class="btn btn--ghost btn--small hide-sm" href="tel:+6281376075721">Telepon</a>
+      <a class="btn btn--small" target="_blank" rel="noopener"
+         href="https://wa.me/6281376075721?text=Halo%20Service%20AC%20Sunggal,%20saya%20mau%20booking%20service%20AC.%0ATanggal:%20%0AAlamat:%20%0AJam:%20%0AKeluhan:%20">
+        WhatsApp
+      </a>
+
+      <button class="menuBtn" aria-label="Buka menu" aria-expanded="false" data-menu>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobileNav" data-mobile>
+    <a href="/index.html">Home</a>
+    <a href="/jadwal" class="is-active">Jadwal</a>
+
+    <div class="mobileNav__cta">
+      <a class="btn btn--block" href="tel:+6281376075721">Telepon</a>
+      <a class="btn btn--ghost btn--block" target="_blank" rel="noopener"
+         href="https://wa.me/6281376075721?text=Halo%20Service%20AC%20Sunggal,%20saya%20mau%20booking%20service%20AC.%0ATanggal:%20%0AAlamat:%20%0AJam:%20%0AKeluhan:%20">
+        WhatsApp Booking
+      </a>
+    </div>
+  </div>
+</header>
+
+
+  <main class="container page">
+    <div class="pageHead">
+      <div>
+        <h1>Jadwal Ketersediaan</h1>
+        <p class="muted">Biru = tersedia • Merah = penuh • Abu = tutup</p>
+      </div>
+
+      <div class="pageHead__actions">
+        <button class="btn btn--ghost" id="prevMonth">← Previous</button>
+        <div class="pill pill--info" id="monthLabel">—</div>
+        <button class="btn btn--ghost" id="nextMonth">Next Month →</button>
+      </div>
+    </div>
+
+    <section class="card cardPad">
+      <div class="calTop">
+        <div class="legend">
+          <span class="dot dot--avail"></span> Tersedia
+          <span class="dot dot--full"></span> Penuh
+          <span class="dot dot--closed"></span> Tutup
+        </div>
+        <div class="todayLabel">Hari ini: <span id="todayText"></span></div>
+
+      </div>
+
+     <div class="calendarHeader">
+  <div class="dow">Senin</div>
+  <div class="dow">Selasa</div>
+  <div class="dow">Rabu</div>
+  <div class="dow">Kamis</div>
+  <div class="dow">Jumat</div>
+  <div class="dow">Sabtu</div>
+  <div class="dow">Minggu</div>
+</div>
+
+
+      <div class="calendarGrid" id="calendar"></div>
+    </section>
+
+    <div class="ctaBand">
+      <div>
+        <div class="ctaBand__title">Mau booking?</div>
+        <div class="muted">Kirim tanggal yang tersedia via WhatsApp.</div>
+      </div>
+      <a class="btn btn--primary" target="_blank" rel="noopener"
+         href="https://wa.me/6281376075721?text=Halo%20Service%20AC%20Sunggal,%20saya%20mau%20booking%20tanggal%20...%20jam%20...">
+        WhatsApp
+      </a>
+
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+  
+</body>
+</html>

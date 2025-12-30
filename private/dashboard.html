@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Service AC Sunggal</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="role-bos">
+  <header class="topbar">
+  <div class="container topbar__inner">
+
+    <a class="brand" href="/admin">
+      <div class="brand__logoBox">
+        <img src="/assets/logo-ac.png" class="brand__logoImg" alt="">
+      </div>
+      <div class="brand__text">
+        <div class="brand__name">Service AC Sunggal</div>
+        <div class="brand__tag">Admin Panel</div>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav">
+      <a href="/admin">Dashboard</a>
+      <a href="/admin/atur">Atur Jadwal</a>
+      <a href="/admin/bulanan">Bulanan</a>
+      <a href="/admin/users">Staff</a>
+      <a href="/logout">Logout</a>
+    </nav>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="menuBtn" id="menuBtn" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobileNav" id="mobileNav">
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/atur">Atur Jadwal</a>
+    <a href="/admin/bulanan">Bulanan</a>
+    <a href="/admin/users">Staff</a>
+    <a href="/logout">Logout</a>
+  </div>
+</header>
+
+
+  <main class="container page">
+    <div class="card cardPad">
+      <h1 style="margin:0 0 6px;">Dashboard</h1>
+      <p class="muted">Kelola jadwal tanpa terlihat oleh pelanggan.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px;">
+        <a class="card cardPad" href="/admin/atur" style="box-shadow:none">
+          <div style="font-weight:900">Atur Jadwal</div>
+          <div class="muted small">Klik tanggal: tersedia → penuh → tutup</div>
+        </a>
+
+        <a class="card cardPad" href="/admin/jadwal" style="box-shadow:none">
+          <div style="font-weight:900">Preview Jadwal</div>
+          <div class="muted small">Cek tampilan kalender (read-only)</div>
+        </a>
+
+        <a class="card cardPad" href="/jadwal" style="box-shadow:none">
+          <div style="font-weight:900">Halaman Publik</div>
+          <div class="muted small">Yang dilihat pelanggan</div>
+        </a>
+      </div>
+    </div>
+  </main>
+<script>
+(function(){
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  if(!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("is-open");
+  });
+
+  nav.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click", ()=> nav.classList.remove("is-open"));
+  });
+})();
+</script>
+
+
+</body>
+</html>

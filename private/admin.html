@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atur Jadwal — Admin</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="role-bos">
+ <header class="topbar">
+  <div class="container topbar__inner">
+
+    <a class="brand" href="/admin">
+      <div class="brand__logoBox">
+        <img src="/assets/logo-ac.png" class="brand__logoImg" alt="">
+      </div>
+      <div class="brand__text">
+        <div class="brand__name">Service AC Sunggal</div>
+        <div class="brand__tag">Admin Panel</div>
+      </div>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav">
+      <a href="/admin">Dashboard</a>
+      <a href="/admin/atur">Atur Jadwal</a>
+      <a href="/admin/bulanan">Bulanan</a>
+      <a href="/admin/users">Staff</a>
+      <a href="/logout">Logout</a>
+    </nav>
+
+    <!-- HAMBURGER BUTTON -->
+    <button class="menuBtn" id="menuBtn" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobileNav" id="mobileNav">
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/atur">Atur Jadwal</a>
+    <a href="/admin/bulanan">Bulanan</a>
+    <a href="/admin/users">Staff</a>
+    <a href="/logout">Logout</a>
+  </div>
+</header>
+
+  <main class="container page">
+    <div class="pageHead">
+      <div>
+        <h1>Atur Jadwal Bulanan</h1>
+        <p class="muted">Klik tanggal untuk mengganti status: Tersedia → Penuh → Tutup</p>
+      </div>
+
+      <div class="pageHead__actions">
+        <button class="btn btn--ghost" id="prevMonthAdmin">← Bulan</button>
+        <div class="pill pill--info" id="monthLabelAdmin">—</div>
+        <button class="btn btn--ghost" id="nextMonthAdmin">Bulan →</button>
+      </div>
+    </div>
+
+    <section class="card cardPad">
+      <div class="calTop">
+        <div class="legend">
+          <span class="dot dot--avail"></span> Tersedia
+          <span class="dot dot--full"></span> Penuh
+          <span class="dot dot--closed"></span> Tutup
+        </div>
+        <div class="muted small">Tip: status tersimpan ke data/availability.json</div>
+      </div>
+
+      <div class="calendarHeader">
+        <div class="muted small">Sen</div><div class="muted small">Sel</div><div class="muted small">Rab</div>
+        <div class="muted small">Kam</div><div class="muted small">Jum</div><div class="muted small">Sab</div><div class="muted small">Min</div>
+      </div>
+      <div class="calendarGrid" id="calendarAdmin"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+
+  <!-- ✅ Script toggle menu mobile -->
+<script>
+(function(){
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mobileNav");
+  if(!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("is-open");
+  });
+
+  nav.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click", ()=> nav.classList.remove("is-open"));
+  });
+})();
+
+</script>
+</body>
+</html>

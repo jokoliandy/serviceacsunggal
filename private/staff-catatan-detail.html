@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Detail Catatan — Staff</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="/staff">
+      <div class="brand__logoBox">
+          <img src="/assets/logo-ac.png" alt="Logo Service AC Sunggal" class="brand__logoImg">
+        </div>
+      <div class="brand__text">
+        <div class="brand__name">Service AC Sunggal</div>
+        <div class="brand__tag">Detail Catatan</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="/staff">Dashboard</a>
+      <a href="/staff/jadwal">Jadwal</a>
+      <a class="nav__active" href="/staff/catatan">Catatan</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <section class="card cardPad">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div>
+        <h1 style="margin:0 0 6px;">Pekerjaan</h1>
+        <p class="muted" id="dateLabel" style="margin:0;"></p>
+      </div>
+      <a class="btn btn--ghost" href="/staff/catatan">← Kembali</a>
+    </div>
+
+    <div id="jobs" class="jobsList" style="margin-top:12px;"></div>
+  </section>
+</main>
+
+<script src="/staff-notes.js"></script>
+</body>
+</html>

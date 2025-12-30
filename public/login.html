@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Service AC Sunggal</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="/index.html">
+        <div class="brand__logoBox">
+          <img src="/assets/logo-ac.png" alt="Logo Service AC Sunggal" class="brand__logoImg">
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">Service AC Sunggal</div>
+          <div class="brand__tag">Login</div>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="card cardPad" style="max-width:480px;margin:0 auto;">
+      <h1 style="margin:0 0 6px;">Masuk</h1>
+      <p class="muted">Login dulu untuk melihat jadwal & mengedit status.</p>
+
+      <form class="form" method="post" action="/login">
+        <label class="field">
+          <span>Username</span>
+          <input name="username" required />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input name="password" type="password" required />
+        </label>
+
+        <button class="btn btn--primary btn--block" type="submit">Login</button>
+      </form>
+
+      <p class="muted small" style="margin-top:10px;">
+        Jika salah, akan kembali ke halaman login.
+      </p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <title>Catatan Pekerjaan — Staff</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <div class="brand">
+      <a class="brand" href="/staff">
+      <div class="brand__logoBox">
+          <img src="/assets/logo-ac.png" alt="Logo Service AC Sunggal" class="brand__logoImg">
+        </div>
+      <div>
+        <div class="brand__name">Service AC Sunggal</div>
+        <div class="brand__tag">Catatan Pekerjaan</div>
+      </div>
+    </div>
+  </a>
+    <nav class="nav">
+      <a href="/staff">Dashboard</a>
+      <a href="/staff/jadwal">Jadwal</a>
+      <a class="nav__active" href="/staff/catatan">Catatan</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <section class="card cardPad">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h1>Tanggal yang Ada Catatan</h1>
+      <button class="btn btn--ghost" id="reload">Refresh</button>
+    </div>
+
+    <div id="datesList" class="jobsList" style="margin-top:14px;">
+      <div class="muted">Memuat data...</div>
+    </div>
+  </section>
+</main>
+
+<script src="/staff-notes.js"></script>
+</body>
+</html>

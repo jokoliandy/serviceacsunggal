@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preview Jadwal — Admin</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="/admin">
+       <div class="brand__logoBox">
+          <img src="/assets/logo-ac.png" alt="Logo Service AC Sunggal" class="brand__logoImg">
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">Service AC Sunggal</div>
+          <div class="brand__tag">Preview Jadwal</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="/admin">Dashboard</a>
+        <a href="/admin/atur">Atur Jadwal</a>
+        <a href="/admin/bulanan">Bulanan</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="pageHead">
+      <div>
+        <h1>Preview Jadwal</h1>
+        <p class="muted">Tampilan ini read-only (tidak bisa edit).</p>
+      </div>
+
+      <div class="pageHead__actions">
+        <button class="btn btn--ghost" id="prevMonthPreview">← Bulan</button>
+        <div class="pill pill--info" id="monthLabelPreview">—</div>
+        <button class="btn btn--ghost" id="nextMonthPreview">Bulan →</button>
+      </div>
+    </div>
+
+    <section class="card cardPad">
+      <div class="calTop">
+        <div class="legend">
+          <span class="dot dot--avail"></span> Tersedia
+          <span class="dot dot--full"></span> Penuh
+          <span class="dot dot--closed"></span> Tutup
+        </div>
+      </div>
+
+      <div class="calendarHeader">
+        <div class="muted small">Sen</div><div class="muted small">Sel</div><div class="muted small">Rab</div>
+        <div class="muted small">Kam</div><div class="muted small">Jum</div><div class="muted small">Sab</div><div class="muted small">Min</div>
+      </div>
+      <div class="calendarGrid" id="calendarPreview"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

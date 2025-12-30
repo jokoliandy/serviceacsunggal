@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Staff Panel — Service AC Sunggal</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="/staff">
+      <div class="brand__logoBox">
+          <img src="/assets/logo-ac.png" alt="Logo Service AC Sunggal" class="brand__logoImg">
+        </div>
+      <div class="brand__text">
+        <div class="brand__name">Service AC Sunggal</div>
+        <div class="brand__tag">Staff Panel</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a class="nav__active" href="/staff">Dashboard</a>
+      <a href="/staff/jadwal">Jadwal</a>
+      <a href="/staff/catatan">Catatan</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <section class="card cardPad">
+    <h1 id="staffGreeting">Halo!</h1>
+    <p class="muted">Anda dapat melihat jadwal & catatan pekerjaan, lalu menandai pekerjaan selesai.</p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+      <a class="btn btn--primary" href="/staff/jadwal">Buka Jadwal</a>
+      <a class="btn btn--ghost" href="/staff/catatan">Buka Catatan</a>
+    </div>
+  </section>
+</main>
+
+<script>
+(async function(){
+  const el = document.getElementById("staffGreeting");
+  if(!el) return;
+
+  try{
+    const res = await fetch("/me", { credentials: "include" });
+    const { user } = await res.json();
+
+    if(user && user.role === "staff"){
+      el.textContent = `Halo ${user.username}`;
+    } else {
+      el.textContent = "Halo!";
+    }
+  }catch(e){
+    console.error(e);
+  }
+})();
+</script>
+
+</body>
+</html>
